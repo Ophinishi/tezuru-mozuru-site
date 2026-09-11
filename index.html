@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>チームてづるもづる ｜ 岡西政典研究室 ― クモヒトデの分類と環境DNA</title>
+<meta name="description" content="広島修道大学 岡西政典研究室．クモヒトデ類の分類・系統，標本に紐づく参照DNA，環境DNAによる海の多様性研究．">
+<meta property="og:title" content="チームてづるもづる ｜ 岡西政典研究室">
+<meta property="og:description" content="クモヒトデ類の分類・系統と環境DNAの研究．広島修道大学 岡西研究室．">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tezuru-mozuru.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --abyss:#0b2a2d; --abyss-2:#0e3337; --abyss-3:#12403f;
+    --bone:#e9e4d8; --bone-dim:#9fb0a8;
+    --amber:#dca54b; --biolum:#63d1c4;
+    --line:rgba(233,228,216,.13); --line-strong:rgba(233,228,216,.28);
+    --serif:'Fraunces','Hoefler Text',Georgia,'Times New Roman',serif;
+    --sans:'Inter',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+    --measure:64ch;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--abyss);color:var(--bone);font-family:var(--sans);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  i,em,.sci{font-style:italic}
+  a{color:inherit}
+  ::selection{background:var(--amber);color:var(--abyss)}
+  :focus-visible{outline:2px solid var(--biolum);outline-offset:3px;border-radius:2px}
+  .wrap{width:min(1080px,100% - 3rem);margin-inline:auto}
+
+  header.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(8px);
+    background:linear-gradient(var(--abyss),rgba(11,42,45,.72));border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:.85rem 0;gap:1rem}
+  .brand{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:.01em;
+    text-decoration:none;display:inline-flex;align-items:center;gap:.55rem;white-space:nowrap}
+  .brand .glyph{width:20px;height:20px;color:var(--amber);flex:0 0 auto}
+  .nav-links{display:flex;gap:1.5rem;font-size:.92rem}
+  .nav-links a{text-decoration:none;color:var(--bone-dim);transition:color .2s}
+  .nav-links a:hover{color:var(--bone)}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;
+    padding:clamp(3rem,8vh,6rem) 0 clamp(3rem,7vh,5rem)}
+  .kicker{font-size:.9rem;color:var(--bone-dim);margin:0 0 1.4rem;letter-spacing:.03em}
+  h1.display{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.6vw,3.2rem);
+    line-height:1.14;margin:0;letter-spacing:-.01em}
+  .lede{max-width:46ch;margin:1.5rem 0 0;color:var(--bone-dim);font-size:1.04rem;line-height:1.75}
+  .who{margin:1.4rem 0 0;font-size:.98rem;color:var(--bone)}
+  .who b{font-weight:600}
+  .motif-holder{position:relative;aspect-ratio:1/1;min-height:250px}
+  #motif{position:absolute;inset:0;width:100%;height:100%;opacity:0;transform:scale(.94);
+    transition:opacity 1.4s ease,transform 1.6s ease}
+  #motif.in{opacity:1;transform:scale(1)}
+  @media (prefers-reduced-motion:reduce){#motif{transition:none;opacity:1;transform:none}}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:1rem}
+    .motif-holder{order:-1;max-width:320px;margin:0 auto;min-height:200px}.lede{max-width:none}}
+
+  section{padding:clamp(3.2rem,7vh,5rem) 0;border-bottom:1px solid var(--line)}
+  .sec-head{font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,3vw,1.9rem);
+    margin:0 0 .5rem;letter-spacing:-.01em}
+  .sec-intro{max-width:var(--measure);color:var(--bone-dim);margin:0 0 2.4rem}
+
+  .row{display:grid;grid-template-columns:1.4rem 1fr;gap:1.4rem;padding:1.6rem 0;border-top:1px solid var(--line)}
+  .row:last-child{border-bottom:1px solid var(--line)}
+  .row .rad{color:var(--amber);margin-top:.3rem}
+  .row h3{font-family:var(--serif);font-weight:500;font-size:1.2rem;margin:0 0 .5rem}
+  .row p{margin:0;max-width:60ch;color:var(--bone-dim)}
+
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:.5rem}
+  .field{border:1px solid var(--line);border-radius:12px;padding:1.6rem;
+    background:linear-gradient(180deg,var(--abyss-2),var(--abyss))}
+  .field .place{font-family:var(--serif);font-size:1.25rem;margin:0 0 .2rem}
+  .field .role{color:var(--bone-dim);font-size:.84rem;margin:0 0 .8rem}
+  .field p{margin:0;color:var(--bone-dim);font-size:.96rem}
+  @media(max-width:680px){.fields{grid-template-columns:1fr}}
+
+  .db-card{display:block;text-decoration:none;border:1px solid var(--line-strong);border-radius:12px;
+    padding:1.6rem 1.8rem;max-width:var(--measure);
+    background:linear-gradient(180deg,var(--abyss-2),var(--abyss));transition:border-color .2s,transform .15s}
+  .db-card:hover{border-color:var(--amber);transform:translateY(-2px)}
+  .db-title{font-family:var(--serif);font-size:1.2rem;margin:0 0 .35rem;color:var(--bone)}
+  .db-arrow{color:var(--amber);font-size:.9em}
+  .db-sub{margin:0;color:var(--bone-dim);font-size:.95rem}
+
+  .book{display:flex;justify-content:space-between;gap:1.5rem;align-items:baseline;
+    padding:1.1rem 0;border-top:1px solid var(--line)}
+  .book:last-child{border-bottom:1px solid var(--line)}
+  .book .t{font-family:var(--serif);font-size:1.1rem}
+  .book .meta{color:var(--bone-dim);font-size:.9rem;white-space:nowrap}
+  @media(max-width:600px){.book{flex-direction:column;gap:.2rem}.book .meta{white-space:normal}}
+
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+  @media(max-width:760px){.duo{grid-template-columns:1fr;gap:2.4rem}}
+  .about p{color:var(--bone-dim);max-width:52ch}
+  .contact p{color:var(--bone-dim);margin:0 0 1.2rem;max-width:44ch}
+  .contact .aside{font-size:.92rem;color:var(--bone-dim);margin:0 0 1.4rem;max-width:44ch}
+  .lines a,.lines span{display:block;text-decoration:none;padding:.55rem 0;
+    border-top:1px solid var(--line);font-size:1.02rem}
+  .lines a:hover{color:var(--amber)}
+  .lines .k{color:var(--bone-dim);font-size:.82rem;display:block;margin-bottom:.1rem}
+  .lines a:last-child,.lines span:last-child{border-bottom:1px solid var(--line)}
+
+  footer{padding:2.4rem 0 3.4rem;color:var(--bone-dim);font-size:.85rem}
+  .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;align-items:center}
+  .foot-brand{font-family:var(--serif);color:var(--bone)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="12" cy="12" r="2.1"/><g><path d="M12 10V3"/><path d="M12 4.2 10.6 2.6M12 4.2 13.4 2.6M12 6.4 10.9 5.2M12 6.4 13.1 5.2"/></g><g transform="rotate(72 12 12)"><path d="M12 10V3"/><path d="M12 4.2 10.6 2.6M12 4.2 13.4 2.6M12 6.4 10.9 5.2M12 6.4 13.1 5.2"/></g><g transform="rotate(144 12 12)"><path d="M12 10V3"/><path d="M12 4.2 10.6 2.6M12 4.2 13.4 2.6M12 6.4 10.9 5.2M12 6.4 13.1 5.2"/></g><g transform="rotate(216 12 12)"><path d="M12 10V3"/><path d="M12 4.2 10.6 2.6M12 4.2 13.4 2.6M12 6.4 10.9 5.2M12 6.4 13.1 5.2"/></g><g transform="rotate(288 12 12)"><path d="M12 10V3"/><path d="M12 4.2 10.6 2.6M12 4.2 13.4 2.6M12 6.4 10.9 5.2M12 6.4 13.1 5.2"/></g></g></svg>
+      チームてづるもづる
+    </a>
+    <nav class="nav-links" aria-label="セクション">
+      <a href="#research">研究</a>
+      <a href="#database">データベース</a>
+      <a href="#books">著書</a>
+      <a href="#about">プロフィール</a>
+      <a href="#contact">問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="border-bottom:none">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">広島修道大学 岡西研究室</p>
+        <h1 class="display">クモヒトデを分け，<br>海の多様性を読む．</h1>
+        <p class="lede">クモヒトデ類（ツルクモヒトデ・テヅルモヅルを含む棘皮動物）を対象に，形態と分子系統から分類を見直し，標本に紐づく参照DNAをもとに環境DNAで海の生きものを追っています．</p>
+        <p class="who"><b>岡西政典</b>（おかにし まさのり）／ 広島修道大学 人間環境学部 教授．</p>
+      </div>
+      <div class="motif-holder">
+        <svg id="motif" viewBox="0 0 400 400" aria-hidden="true" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <h2 class="sec-head">研究内容</h2>
+      <p class="sec-intro">大きく四つのテーマに取り組んでいます．</p>
+      <div class="row">
+        <span class="rad" aria-hidden="true">◈</span>
+        <div>
+          <h3>クモヒトデ類の分類・系統</h3>
+          <p>形態の観察やマイクロCT，分子系統をもとに，日本産クモヒトデの分類を見直し，新種の記載を続けています．深海のツルクモヒトデ・テヅルモヅル類が主な対象です．</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="rad" aria-hidden="true">◈</span>
+        <div>
+          <h3>化石クモヒトデと進化史</h3>
+          <p>現生種だけでなく，化石記録も研究対象です．日本の地層から化石のクモヒトデ・テヅルモヅル類を記載し，クモヒトデがたどってきた進化の歴史を時間軸で読み解きます．</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="rad" aria-hidden="true">◈</span>
+        <div>
+          <h3>標本に紐づく参照DNAデータベース</h3>
+          <p>16S・COI・28S の配列を，実際のバウチャー標本（国立科学博物館ほか）に一つずつ紐づけています．環境DNAで種を確かに同定するための基盤づくりです．</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="rad" aria-hidden="true">◈</span>
+        <div>
+          <h3>環境DNAによる多様性のモニタリング</h3>
+          <p>沿岸で採水した環境DNAから，クモヒトデ・底生無脊椎の在・不在や季節変化を追い，海域の生物多様性を評価します．</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="database">
+    <div class="wrap">
+      <h2 class="sec-head">日本産クモヒトデ標本データベース</h2>
+      <p class="sec-intro">研究室で管理する標本情報をデジタル化し，分布や収集の進捗を公開しているデータベースです．分布マップ・標本リスト・DNA解析の進捗を随時更新しています．</p>
+      <a class="db-card" href="https://sites.google.com/view/jp-ophi-db/" target="_blank" rel="noopener">
+        <p class="db-title">日本産クモヒトデ標本データベースを開く <span class="db-arrow" aria-hidden="true">↗</span></p>
+        <p class="db-sub">分布マップ ・ 標本リスト ・ DNA進捗状況</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="fields">
+    <div class="wrap">
+      <h2 class="sec-head">調査海域</h2>
+      <p class="sec-intro">日本各地で調査していますが，特にデータの蓄積がある海域です．</p>
+      <div class="fields">
+        <div class="field">
+          <p class="place">相模湾</p>
+          <p class="role">分類・系統研究の中心</p>
+          <p>ゲノムワイドな解析をもとに，多くの種を記載してきた海域．種同定の土台となる場所です．</p>
+        </div>
+        <div class="field">
+          <p class="place">瀬戸内海</p>
+          <p class="role">環境DNAの季節モニタリング</p>
+          <p>沿岸で自ら採水したデータをもとに，生きもの相の季節ごとの移り変わりを追跡しています．</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="books">
+    <div class="wrap">
+      <h2 class="sec-head">著書</h2>
+      <p class="sec-intro">「生きものを分ける」ことを，一般に向けて書いてきました．</p>
+      <div class="book"><span class="t">生物を分けると世界が分かる</span><span class="meta">講談社ブルーバックス ／ 2022</span></div>
+      <div class="book"><span class="t">新種の発見 ― 見つけ，名づけ，系統づける動物分類学</span><span class="meta">中公新書 ／ 2020</span></div>
+      <div class="book"><span class="t">深海生物テヅルモヅルの謎を追え！</span><span class="meta">東海大学出版部 ／ 2016</span></div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-bottom:none">
+    <div class="wrap duo">
+      <div class="about" id="about">
+        <h2 class="sec-head">プロフィール</h2>
+        <p>岡西政典（おかにし まさのり）．クモヒトデ類（ツルクモヒトデ・テヅルモヅルを含む棘皮動物）を専門とする分類学者．形態・分子系統・環境DNAを組み合わせ，海の生物多様性を種のレベルで解き明かすことを目指しています．広島修道大学 人間環境学部 教授．著書に『生物を分けると世界が分かる』（講談社ブルーバックス）など．</p>
+      </div>
+      <div class="contact">
+        <h2 class="sec-head">お問い合わせ</h2>
+        <p>研究・調査に関するお問い合わせは，メールへお願いします．</p>
+        <p class="aside">同定・監修などのご相談も承ります．</p>
+        <div class="lines">
+          <a href="mailto:mokanishi@tezuru-mozuru.com"><span class="k">メール</span>mokanishi(at)tezuru-mozuru.com</a>
+          <!-- Xのアカウントが決まったら href と表示名を差し替えてください -->
+          <a href="#"><span class="k">X（旧Twitter）</span>＠準備中</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span><span class="foot-brand">チームてづるもづる</span> ／ Team Tezuru-mozuru</span>
+    <span>tezuru-mozuru.com ・ © 2026 Masanori Okanishi</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var svg=document.getElementById('motif'); if(!svg)return;
+  var NS='http://www.w3.org/2000/svg'; var cx=200,cy=200; var seed=7;
+  function rnd(){seed=(seed*9301+49297)%233280;return seed/233280;}
+  function line(x1,y1,x2,y2,w,op,col){
+    var l=document.createElementNS(NS,'line');
+    l.setAttribute('x1',x1.toFixed(1));l.setAttribute('y1',y1.toFixed(1));
+    l.setAttribute('x2',x2.toFixed(1));l.setAttribute('y2',y2.toFixed(1));
+    l.setAttribute('stroke',col);l.setAttribute('stroke-width',w.toFixed(2));
+    l.setAttribute('stroke-linecap','round');l.setAttribute('opacity',op.toFixed(2));
+    svg.appendChild(l);
+  }
+  function lerpCol(t){var a=[233,228,216],b=[220,165,75];
+    return 'rgb('+Math.round(a[0]+(b[0]-a[0])*t)+','+Math.round(a[1]+(b[1]-a[1])*t)+','+Math.round(a[2]+(b[2]-a[2])*t)+')';}
+  function branch(x,y,ang,len,depth,w){
+    if(depth<=0||len<3)return;
+    var a=ang+(rnd()-0.5)*0.16;
+    var x2=x+Math.cos(a)*len,y2=y+Math.sin(a)*len; var t=1-(depth/6);
+    line(x,y,x2,y2,w,0.16+0.45*t,lerpCol(t));
+    var spread=0.42+(rnd()-0.5)*0.1,f=0.74;
+    branch(x2,y2,a-spread,len*f,depth-1,w*0.72);
+    branch(x2,y2,a+spread,len*f,depth-1,w*0.72);
+    if(rnd()>0.55) branch(x2,y2,a,len*f*0.8,depth-1,w*0.55);
+  }
+  var defs=document.createElementNS(NS,'defs');
+  defs.innerHTML='<radialGradient id="glow" cx="50%" cy="50%" r="50%">'+
+    '<stop offset="0%" stop-color="#63d1c4" stop-opacity="0.28"/>'+
+    '<stop offset="45%" stop-color="#63d1c4" stop-opacity="0.05"/>'+
+    '<stop offset="100%" stop-color="#63d1c4" stop-opacity="0"/></radialGradient>';
+  svg.appendChild(defs);
+  var glow=document.createElementNS(NS,'circle');
+  glow.setAttribute('cx',cx);glow.setAttribute('cy',cy);glow.setAttribute('r',120);
+  glow.setAttribute('fill','url(#glow)');svg.appendChild(glow);
+  for(var i=0;i<5;i++){var ang=-Math.PI/2+i*(2*Math.PI/5);branch(cx,cy,ang,52,6,2.6);}
+  var d=document.createElementNS(NS,'circle');
+  d.setAttribute('cx',cx);d.setAttribute('cy',cy);d.setAttribute('r',6);
+  d.setAttribute('fill','none');d.setAttribute('stroke','#dca54b');d.setAttribute('stroke-width','1.6');
+  svg.appendChild(d);
+  requestAnimationFrame(function(){requestAnimationFrame(function(){svg.classList.add('in');});});
+})();
+</script>
+</body>
+</html>
