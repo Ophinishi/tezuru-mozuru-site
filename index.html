@@ -72,6 +72,15 @@
   .row h3{font-family:var(--serif);font-weight:500;font-size:1.2rem;margin:0 0 .5rem}
   .row p{margin:0;max-width:60ch;color:var(--bone-dim)}
 
+  .event-card{border:1px solid var(--line-strong);border-left:3px solid var(--amber);border-radius:12px;padding:clamp(1.2rem,3vw,2rem);margin-top:1.4rem;background:var(--abyss-2)}
+  .event-card h3{font-size:clamp(1.3rem,3vw,1.75rem);font-weight:500;margin:.5rem 0 1rem}
+  .event-card p{max-width:64ch;color:var(--bone-dim);margin:.7rem 0}
+  .event-card .event-label{color:var(--amber);font-size:.9rem}
+  .event-card .event-date{color:var(--bone);font-weight:600}
+  .event-card .event-note{font-size:.9rem;margin-top:1.2rem}
+  .event-links{display:flex;flex-wrap:wrap;gap:.7rem 1.5rem;margin-top:1.3rem}
+  .event-links a{color:var(--biolum);text-underline-offset:.2em}
+
   .fields{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:.5rem}
   .field{border:1px solid var(--line);border-radius:12px;padding:1.6rem;
     background:linear-gradient(180deg,var(--abyss-2),var(--abyss))}
@@ -128,6 +137,7 @@
       岡西政典
     </a>
     <nav class="nav-links" aria-label="セクション">
+      <a href="#news">お知らせ</a>
       <a href="#research">研究</a>
       <a href="#database">データベース</a>
       <a href="#books">著書</a>
@@ -153,6 +163,24 @@
       <div class="motif-holder">
         <svg id="motif" viewBox="0 0 400 400" aria-hidden="true" preserveAspectRatio="xMidYMid meet"></svg>
       </div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="wrap">
+      <h2 class="sec-head">お知らせ</h2>
+      <article class="event-card">
+        <p class="event-label">登壇のお知らせ ／ いきもにあ2026</p>
+        <h3>テヅルモヅルはどこから来たか</h3>
+        <p class="event-date"><time datetime="2026-10-17T14:00:00+09:00">2026年10月17日（土）14:00〜14:45</time></p>
+        <p>京都市勧業館みやこめっせ 3階 第3展示場</p>
+        <p>枝分かれした腕をもつテヅルモヅル．その姿と進化の謎を，標本やDNAを調べる研究の面白さとともにお話しします．</p>
+        <p class="event-note">聴講無料（イベント入場料が必要）．200席・先着順・各回入替制．参加方法の詳細は公式サイトをご確認ください．</p>
+        <div class="event-links">
+          <a href="https://www.equimonia.net/post/eq26lecture1" target="_blank" rel="noopener noreferrer">講演の公式案内 ↗</a>
+          <a href="https://www.equimonia.net/overview" target="_blank" rel="noopener noreferrer">開催概要・入場案内 ↗</a>
+        </div>
+      </article>
     </div>
   </section>
 
