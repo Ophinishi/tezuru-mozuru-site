@@ -41,7 +41,8 @@
   .nav-links{display:flex;gap:1.5rem;font-size:.92rem}
   .nav-links a{text-decoration:none;color:var(--bone-dim);transition:color .2s}
   .nav-links a:hover{color:var(--bone)}
-  @media(max-width:760px){.nav-links{display:none}}
+  @media(max-width:960px){.nav-in{flex-wrap:wrap}.nav-links{width:100%;gap:1.1rem;overflow-x:auto;white-space:nowrap;padding-bottom:.25rem}}
+  section[id], .about[id]{scroll-margin-top:8rem}
 
   .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;
@@ -132,8 +133,9 @@
       <a href="#books">著書</a>
       <a href="#pubs">業績</a>
       <a href="#about">プロフィール</a>
+      <a href="#consultation">ご相談</a>
       <a href="#contact">問い合わせ</a>
-      <a href="http://www.tezuru-mozuru.com/" target="_blank" rel="noopener">テヅルモヅル ↗</a>
+      <a href="https://www.tezuru-mozuru.com/" target="_blank" rel="noopener">テヅルモヅル ↗</a>
     </nav>
   </div>
 </header>
@@ -262,26 +264,31 @@
     </div>
   </section>
 
+  <section id="consultation">
+    <div class="wrap">
+      <h2 class="sec-head">ご相談いただけること</h2>
+      <p class="sec-intro">分類学の知識と研究経験をもとに，生きものを知る・伝える・調べる活動についてご相談を承ります．</p>
+      <div class="row"><span class="rad" aria-hidden="true">◈</span><div><h3>講演・執筆・監修</h3><p>分類学，新種発見，海洋生物の多様性をテーマにした講演や執筆，教材・展示・記事の監修についてご相談ください．対象となる方や媒体に応じて内容を検討します．</p></div></div>
+      <div class="row"><span class="rad" aria-hidden="true">◈</span><div><h3>同定・分類に関する相談</h3><p>クモヒトデ類を中心に，標本や画像の同定，分類上の扱いについてご相談ください．画像だけでは判断できない場合もあるため，資料を確認して対応範囲をご案内します．</p></div></div>
+      <div class="row"><span class="rad" aria-hidden="true">◈</span><div><h3>研究・調査への助言</h3><p>標本情報の整理，標本に紐づく参照DNA，環境DNAを用いた調査などについて，分類学の立場からご相談を承ります．</p></div></div>
+      <p style="margin-top:1.5rem"><a href="#contact">お問い合わせ先へ →</a></p>
+    </div>
+  </section>
+
   <section id="contact" style="border-bottom:none">
     <div class="wrap duo">
       <div class="about" id="about">
         <h2 class="sec-head">プロフィール</h2>
         <p>岡西政典（おかにし まさのり）．クモヒトデ類（ツルクモヒトデ・テヅルモヅルを含む棘皮動物）を専門とする分類学者．形態・分子系統・環境DNAを組み合わせ，海の生物多様性を種のレベルで解き明かすことを目指しています．広島修道大学 人間環境学部 教授．著書に『生物を分けると世界が分かる』（講談社ブルーバックス）など．</p>
-        <p class="mini-h">経歴</p>
-        <ul class="cv">
-          <li><span class="cv-y">学歴</span>出身大学・取得学位をここに（後で追記）</li>
-          <li><span class="cv-y">職歴</span>これまでの所属をここに（後で追記）</li>
-          <li><span class="cv-y">現在</span>広島修道大学 人間環境学部 教授</li>
-        </ul>
+
       </div>
       <div class="contact">
         <h2 class="sec-head">お問い合わせ</h2>
-        <p>研究・調査に関するお問い合わせは，メールへお願いします．</p>
-        <p class="aside">同定・監修などのご相談も承ります．</p>
+        <p>講演・執筆・監修，同定，研究・調査のご相談は，メールでお寄せください．</p>
+        <p class="aside">ご相談の目的・対象，希望時期，資料の有無をお知らせください．内容を伺い，対応可能な範囲をご案内します．</p>
         <div class="lines">
           <a href="mailto:mokanishi@tezuru-mozuru.com"><span class="k">メール</span>mokanishi(at)tezuru-mozuru.com</a>
-          <!-- Xのアカウントが決まったら href と表示名を差し替えてください -->
-          <a href="#"><span class="k">X（旧Twitter）</span>＠準備中</a>
+          <a href="https://x.com/ophinishi" target="_blank" rel="noopener noreferrer"><span class="k">X（旧Twitter）</span>@ophinishi ↗</a>
         </div>
       </div>
     </div>
@@ -292,7 +299,7 @@
 <footer>
   <div class="wrap foot-in">
     <span><span class="foot-brand">岡西政典</span> ／ Masanori Okanishi</span>
-    <span><a href="http://www.tezuru-mozuru.com/" target="_blank" rel="noopener">← チームてづるもづる（研究室サイト）</a> ・ © 2026</span>
+    <span><a href="https://www.tezuru-mozuru.com/" target="_blank" rel="noopener">← チームてづるもづる（研究室サイト）</a> ・ © 2026</span>
   </div>
 </footer>
 
